@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     restoreAct = new QAction("Restore Window", this);
     connect(restoreAct, SIGNAL(triggered()), this, SLOT(showNormal()));
 
-    quitAct = new QAction(QStringLiteral("退出"),this);
+    quitAct = new QAction(QStringLiteral("Exit"),this);
     connect(quitAct, SIGNAL(triggered()), qApp, SLOT(quit()));
 
     // 关联托盘事件
