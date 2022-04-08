@@ -22,11 +22,11 @@ MainWindow::MainWindow(QWidget *parent)
     minimumAct = new QAction("Minimum Window", this);
 
     //Note the differences between hide() and showMinimized().
-    connect(minimumAct, SIGNAL(triggered()), this, SLOT(hide()));
-    maximumAct = new QAction("Maximum Window", this);
-    connect(maximumAct, SIGNAL(triggered()), this, SLOT(showMaximized()));
-    restoreAct = new QAction("Restore Window", this);
-    connect(restoreAct, SIGNAL(triggered()), this, SLOT(showNormal()));
+    //connect(minimumAct, SIGNAL(triggered()), this, SLOT(hide()));
+    //maximumAct = new QAction("Maximum Window", this);
+    //connect(maximumAct, SIGNAL(triggered()), this, SLOT(showMaximized()));
+    //restoreAct = new QAction("Restore Window", this);
+    //connect(restoreAct, SIGNAL(triggered()), this, SLOT(showNormal()));
 
     quitAct = new QAction(QStringLiteral("Exit"),this);
     connect(quitAct, SIGNAL(triggered()), qApp, SLOT(quit()));
@@ -43,7 +43,7 @@ MainWindow::MainWindow(QWidget *parent)
     pContextMenu->addAction(quitAct);
 
     systemTray->setContextMenu(pContextMenu);
-    pContextMenu->show();
+    //pContextMenu->show();
 
 
 
