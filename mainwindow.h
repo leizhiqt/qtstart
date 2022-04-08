@@ -21,12 +21,17 @@ private:
     void closeEvent(QCloseEvent *event);
 private slots:
     int OnSystemTrayClicked(QSystemTrayIcon::ActivationReason reason);
+    void on_pushButton_clicked();
 
-private:
+    void closing();
+
+public:
     Ui::MainWindow *ui;
-
+private:
     QSystemTrayIcon *systemTray;
     QAction *minimumAct,*maximumAct,*restoreAct,*quitAct;
     QMenu *pContextMenu;
+
+    int count;
 };
 #endif // MAINWINDOW_H

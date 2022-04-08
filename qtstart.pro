@@ -24,11 +24,17 @@ message($$OUT_PWD)
 message($$DESTDIR)
 
 SOURCES += \
+    Start.cpp \
+    client.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    #other.cpp
 
 HEADERS += \
-    mainwindow.h
+    Start.h \
+    client.h \
+    mainwindow.h \
+    #other.h
 
 FORMS += \
     mainwindow.ui
