@@ -1,16 +1,17 @@
-#include "client.h"
+﻿#include "client.h"
 #include "Start.h"
 
-Client::Client()
-{
+//Client::Client()
+//{
 
-}
+//}
 
 void Client::takeShow()
 {
     //mWin->hide();
-    if(mWin->ui->lineEdit->isVisible())
-        mWin->ui->lineEdit->hide();
+    //qtStart->mWin;
+    if(qtStart->mWin->ui->lineEdit->isVisible())
+        qtStart->mWin->ui->lineEdit->hide();
     else
-        mWin->ui->lineEdit->show();
+        qtStart->mWin->ui->lineEdit->show();
 }

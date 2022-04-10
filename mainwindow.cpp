@@ -66,7 +66,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButton->setDefault(true);//设置字体加粗
 
     this->update();
-    this->hide();
+    this->show();
+    //this->hide();
 }
 
 MainWindow::~MainWindow()
@@ -102,7 +103,7 @@ int MainWindow::OnSystemTrayClicked(QSystemTrayIcon::ActivationReason reason)
 void MainWindow::on_pushButton_clicked()
 {
     qDebug("pushButtonConnect");
-    client->takeShow();
+    qtStart->client->takeShow();
 }
 
 void MainWindow::closing()

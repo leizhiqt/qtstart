@@ -7,9 +7,9 @@ CONFIG += c++11
 DESTDIR=$$OUT_PWD/bin
 
 #设置c编译器flag参数
-QMAKE_CFLAGS += -static
+#QMAKE_CFLAGS += -static
 #设置c++编译器flag参数
-QMAKE_CXXFLAGS += -static
+#QMAKE_CXXFLAGS += -static
 #设置链接器flag参数
 #QMAKE_LFLAGS += -static
 
@@ -46,3 +46,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     icon.qrc
+
+#OBJECTS_DIR=$$OUT_PWD/obj
+#MOC_DIR=$$OUT_PWD/moc
+#RCC_DIR=$$OUT_PWD/rcc

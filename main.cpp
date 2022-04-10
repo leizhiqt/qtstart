@@ -1,4 +1,4 @@
-#include <QApplication>
+﻿#include <QApplication>
 #include <QMutex>
 #include <QMessageLogContext>
 #include <QtMessageHandler>
@@ -57,13 +57,17 @@ void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QS
     mutex.unlock();
 }
 
+QtStart *qtStart;
+
 int main(int argc, char *argv[])
 {
     // 安装消息处理程序
     qInstallMessageHandler(myMessageOutput);
 
     QApplication a(argc, argv);
-    start();
+    qtStart = new QtStart();
+
+    //start();
 //    QObject::connect(&a,SIGNAL(aboutToQuit()),mWin,SLOT(closing()));
 //    const int retval=a.exec();
 //    destroy();
