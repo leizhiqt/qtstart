@@ -111,4 +111,6 @@ VisualC++ 设置LIB
 C_INCLUDE_PATH=%MINGW_HOME%\include
 CPLUS_INCLUDE_PATH=%MINGW_HOME%\include;%MINGW_HOME%\lib\gcc\mingw32\%MINGW_VERSION%\include;%MINGW_HOME%\lib\gcc\mingw32\%MINGW_VERSION%\include\c++;%MINGW_HOME%\lib\gcc\mingw32\%MINGW_VERSION%\include\c++\mingw32;%MINGW_HOME%\lib\gcc\mingw32\%MINGW_VERSION%\include\c++\backward
 
+LLVM
+
 clang++ -v hello.c
