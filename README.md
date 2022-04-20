@@ -83,3 +83,17 @@ cd build
 
 make -j12
 make install
+
+#交叉编译Linux
+crosstool-ng 
+
+#MSV2017 qt5 clang
+#VS 环境变量
+VSDIR=C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise
+INCLUDE=VSDIR\VC\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt
+LIB=VSDIR\VC\lib\amd64;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.16299.0\ucrt\x64;C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x64
+PATH=VSDIR\Common7\IDE;VSDIR\VC\bin
+
+#MSYS2 qt5 clang
+pacman -S mingw-w64-i686-qt5 mingw-w64-i686-qt5-static mingw-w64-i686-clang
+pacman -S mingw-w64-x86_64-qt5 mingw-w64-x86_64-qt5-static mingw-w64-x86_64-clang
