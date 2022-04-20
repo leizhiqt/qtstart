@@ -97,3 +97,18 @@ PATH=VSDIR\Common7\IDE;VSDIR\VC\bin
 #MSYS2 qt5 clang
 pacman -S mingw-w64-i686-qt5 mingw-w64-i686-qt5-static mingw-w64-i686-clang
 pacman -S mingw-w64-x86_64-qt5 mingw-w64-x86_64-qt5-static mingw-w64-x86_64-clang
+
+使用 MinGW 的，要设置：
+C_INCLUDE_PATH
+CPLUS_INCLUDE_PATH
+使用 Visual C++ 的，要设置：
+INCLUDE
+
+附加的链接库
+MinGW 设置LIBRARY_PATH
+VisualC++ 设置LIB
+
+C_INCLUDE_PATH=%MINGW_HOME%\include
+CPLUS_INCLUDE_PATH=%MINGW_HOME%\include;%MINGW_HOME%\lib\gcc\mingw32\%MINGW_VERSION%\include;%MINGW_HOME%\lib\gcc\mingw32\%MINGW_VERSION%\include\c++;%MINGW_HOME%\lib\gcc\mingw32\%MINGW_VERSION%\include\c++\mingw32;%MINGW_HOME%\lib\gcc\mingw32\%MINGW_VERSION%\include\c++\backward
+
+clang++ -v hello.c
