@@ -5,7 +5,19 @@
 #include <QByteArray>
 #include <QDebug>
 
+#include <qpainter.h>
+
 #include "Start.h"
+extern "C"
+{
+#include <libavcodec/avcodec.h>
+#include <libavformat/avformat.h>
+#include <libswscale/swscale.h>
+#include <libavdevice/avdevice.h>
+#include <libavformat/version.h>
+#include <libavutil/time.h>
+#include <libavutil/mathematics.h>
+}
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -65,6 +77,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButton->setFont(boldFont);//设置字体加粗
     ui->pushButton->setDefault(true);//设置字体加粗
 
+    //m_ffmpeg = new FFmpegUtils;
+    //connect(m_ffmpeg, SIGNAL(MyFFmpegSigGetOneFrame(QImage)), this, SLOT(SlotGetOneFrame(QImage)));
+
     this->update();
     this->show();
     //this->hide();
@@ -100,14 +115,79 @@ int MainWindow::OnSystemTrayClicked(QSystemTrayIcon::ActivationReason reason)
 }
 
 
-void MainWindow::on_pushButton_clicked()
-{
-    qDebug("pushButtonConnect");
-    qtStart->client->takeShow();
-}
+//void MainWindow::on_pushButton_clicked()
+//{
+//    qDebug("pushButtonConnect");
+//    qtStart->client->takeShow();
+//}
 
 void MainWindow::closing()
 {
     qDebug("pushButtonConnect");
     destroy();
 }
+
+//void MainWindow::PlayStart(){
+//    this->PlayStop();
+//    qDebug("begin");
+//    m_playThread = new QThread();
+//    m_player = new RTSP_Player(m_ffmpeg);
+//    m_player->SetPlayerUrl("rtsp地址");
+
+//    connect(this,SIGNAL(SigPlayStart()),m_player, SLOT(PlayerStart()));
+
+//    m_player->moveToThread(m_playThread);
+//    m_playThread->start();
+//}
+
+//void MainWindow::PlayStop()
+//{
+//    if (m_player)
+//    {
+//        m_player->PlayerStop();
+//    }
+
+//    if (m_playThread)
+//    {
+//        m_playThread->quit();
+//        m_playThread->wait(1000);
+//        delete m_playThread;
+//        m_playThread = nullptr;
+//    }
+
+//    if (m_player)
+//    {
+//        delete m_player;
+//        m_player = nullptr;
+//    }
+//}
+
+void MainWindow::on_pushButton_clicked()
+{
+//      this->PlayStart();
+//      emit SigPlayStart();
+}
+
+//void MainWindow::SlotGetOneFrame(QImage img){
+//    m_image = img;
+//    this->update();
+//}
+
+//void MainWindow::paintEvent(QPaintEvent *event)
+//{
+//    QPainter painter(this);
+
+//    if (m_image.size().width() <= 0)
+//        return;
+
+//    QImage img = m_image.scaled(ui->labVideo->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+
+//    int x = ui->labVideo->geometry().x();
+//    int y = ui->labVideo->geometry().y();
+//    painter.drawImage(QPoint(x, y), img);
+//}
+
+//void MainWindow::on_pushButton_2_clicked()
+//{
+//    this->PlayStop();
+//}

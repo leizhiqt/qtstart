@@ -26,27 +26,34 @@ message($$DESTDIR)
 SOURCES += \
     Start.cpp \
     client.cpp \
-    main.cpp \
+    #ffmpegutils.cpp \
+    #rtsp_player.cpp \
     mainwindow.cpp \
-    #other.cpp
+    main.cpp
 
 HEADERS += \
     Start.h \
     client.h \
-    mainwindow.h \
-    #other.h
+    #ffmpegutils.h \
+    #rtsp_player.h \
+    mainwindow.h
+
+INCLUDEPATH += /home/zhi/ffmpeg-linux64/include
+LIBS += -L/home/zhi/ffmpeg-linux64/lib -lavformat -lavcodec -lavutil -lavdevice -lavfilter -lswresample -lswscale -lz -llzma -lbz2
 
 FORMS += \
     mainwindow.ui
+
+RESOURCES += \
+        icon.qrc
+
+OBJECTS_DIR=$$OUT_PWD/tmp/obj
+MOC_DIR=$$OUT_PWD/tmp/moc
+RCC_DIR=$$OUT_PWD/tmp/rcc
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES += \
-    icon.qrc
 
-#OBJECTS_DIR=$$OUT_PWD/obj
-#MOC_DIR=$$OUT_PWD/moc
-#RCC_DIR=$$OUT_PWD/rcc
