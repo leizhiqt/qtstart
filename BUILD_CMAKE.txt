@@ -6,3 +6,37 @@
 可以看到 -Dxxxx 是创建变量，有些软件可能会自己创建一些特殊的、影响编译的变量
 
 在 make 时我们可以加上 VERBOSE=1 用来查看具体编译时的命令，用于调试
+
+经典用法
+~/package$ mkdir build
+~/package$ cd build
+~/package/build$ cmake ..
+~/package/build$ make
+
+新版本
+~/package$ cmake -S . -B build
+~/package$ cmake --build build
+
+安装命令
+#From the build directory (pick one)
+~/package/build $ make install
+~/package/build $ cmake --build . --target install
+~/package/build $ cmake --install . # CMake 3.15+ only
+ 
+#From the source directory (pick one)
+~/package $ cmake --build build --target install
+~/package $ cmake --install build # CMake 3.15+ only
+
+推荐使用 --build 用法
+通过 -v 显示执行的构建命令: cmake --build build -v
+通过 --target 来选择目标：cmake --build --target install
+
+设置 CC 和 CXX 环境变量来选择 C/C++ 编译器
+~/package/build $ CC=clang CXX=clang++ cmake ..
+
+选择不同的工具进行构建
+make 通常是默认的，通过 cmake --help 查看支持的构建器
+cmake -G"My Tool" 设置构建器，例如 cmake -S . -B buildXcode -G"Xcode"
+
+通过 -D 来设置选项，例如 cmake -S . -B build -DCMAKE_INSTALL_PREFIX=dist
+--trace 打印 CMake configure 阶段的输出，例如 cmake -S . -B build --trace
