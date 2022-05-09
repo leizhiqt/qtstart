@@ -11,10 +11,12 @@
 ~/package$ mkdir build
 ~/package$ cd build
 ~/package/build$ cmake ..
+
 ~/package/build$ make
 ~/package/build$ cmake --build .
+
 新版本
-~/package$ cmake -S . -B build
+~/package$ cmake -S <path-to-source> -B <path-to-build>
 ~/package$ cmake --build build
 
 安装命令
