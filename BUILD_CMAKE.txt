@@ -1,1 +1,8 @@
+常用的选项
+-DCMAKE_INSTALL_PREFIX= 指定安装路径，相当于 --prefix=
+-DCMAKE_C_COMPILER= 指定 C 编译器，相当于 CC=
+-DCMAKE_CXX_COMPILER=指定 CXX 编译器，相当于 CXX=
 
+可以看到 -Dxxxx 是创建变量，有些软件可能会自己创建一些特殊的、影响编译的变量
+
+在 make 时我们可以加上 VERBOSE=1 用来查看具体编译时的命令，用于调试
