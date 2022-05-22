@@ -1,0 +1,4 @@
+for /r %i in ("*.lib") do (
+@echo %i
+dumpbin /HEADERS %i |find "errfinish"
+) 
