@@ -28,8 +28,8 @@ qt-everywhere-src-5.12.12\qtbase\mkspecs\common\msvc-desktop.conf
 
 #编译
 ..\qt-everywhere-src-5.12.12\configure.bat -prefix "E:\qt\5.12.12\5.12.12_msvc2017_32_static"  -platform win32-msvc 
-	-static -release  -confirm-license -opensource  
-	-qt-zlib -qt-libpng -qt-libjpeg -opengl desktop -qt-freetype 
+	-static -fontconfig -release  -confirm-license -opensource  
+	-qt-zlib -qt-libpng -qt-libjpeg -opengl desktop 
 	-nomake tests -nomake examples  
 	-no-qml-debug -no-angle  -no-rpath -no-egl 
 	-skip qtwayland -skip qtwebengine -skip qtmacextras 
@@ -39,8 +39,8 @@ qt-everywhere-src-5.12.12\qtbase\mkspecs\common\msvc-desktop.conf
 	-mp
 
 ..\qt-everywhere-src-5.12.12\configure.bat -prefix "E:\qt\5.12.12\5.12.12_msvc2017_32_static"  -platform win32-msvc 
-	-static -debug-and-release  -confirm-license -opensource  
-	-qt-zlib -qt-libpng -qt-libjpeg -opengl desktop -qt-freetype 
+	-static -fontconfig -debug-and-release  -confirm-license -opensource  
+	-qt-zlib -qt-libpng -qt-libjpeg -opengl desktop
 	-nomake tests -nomake examples  
 	-no-qml-debug -no-angle  -no-rpath -no-egl 
 	-mp
