@@ -114,14 +114,3 @@ CPLUS_INCLUDE_PATH=%MINGW_HOME%\include;%MINGW_HOME%\lib\gcc\mingw32\%MINGW_VERS
 LLVM
 
 clang++ -v hello.c
-
-//
-#!/bin/bash
-LibDir=lib
-Target=$1
-lib_array=($(ldd $Target | grep -o "/.*" | grep -o "/.*/[^[:space:]]*"))
-$(mkdir $LibDir)
-for Variable in ${lib_array[@]}
-do
-    cp "$Variable" $LibDir
-done
