@@ -1,0 +1,25 @@
+https://download.qt.io/archive/qt/5.15/5.15.7/single/qt-everywhere-opensource-src-5.15.7.tar.xz
+https://www.linuxfromscratch.org/patches/blfs/svn/qt-everywhere-opensource-src-5.15.7-kf5-1.patch
+
+patch -Np1 -i ../qt-everywhere-opensource-src-5.15.7-kf5-1.patch
+mkdir build
+cd build
+
+../qt-everywhere-src-5.15.7/configure -v -prefix /opt/qt-5.15.7-linux64-static \
+	-static -release -confirm-license -opensource \
+	-qt-zlib -qt-libpng -qt-libjpeg -qt-pcre -qt-freetype \
+	-nomake tests -nomake examples \
+	-no-qml-debug -no-angle -no-rpath -no-icu \
+	-no-compile-examples -no-pkg-config -no-strip -linuxfb \
+	-no-openssl -no-feature-gssapi -no-accessibility \
+	-no-tiff -no-dbus -no-pch  \
+	-no-iconv -no-harfbuzz -no-evdev \
+	-no-xcb -no-xcb-xlib \
+	-no-xkbcommon -no-glib \
+	-no-opengl -no-egl \
+	-disable-system-proxies \
+	-skip qtwayland -skip qtwebengine -skip qtmacextras \
+	-skip qtandroidextras -skip qtsensors \
+	-skip qtconnectivity -skip qtspeech -skip qtmultimedia \
+	-skip qt3d -skip qtquick3d -skip qtquickcontrols2 -skip qtx11extras \
+	-skip qtdoc
